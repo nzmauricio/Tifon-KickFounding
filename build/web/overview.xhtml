@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+            xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <head>
+        <meta content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+        <link rel="shortcut icon" href="assets/img/favicon.ico" />
+        <title>
+            San Diego - Bootstrap Crowdfunding HTML Template
+        </title>
+        <link href="http://fonts.googleapis.com/css?family=Raleway:400,300,500,600,700,800,900" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="edd_templates/edd.css" type="text/css" media="all" />
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css" media="all" />
+        <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+        <link rel="stylesheet" href="assets/css/font-awesome.css" type="text/css" media="all" />
+        
+        <link rel="stylesheet" href="resources/css/circle.css" type="text/css" media="all"></link>
+        <!--  UNCOMMENT THE FOLLOWING LINE TO ACTIVATE THE BOXED LAYOUT (see the
+          documentation for more) -->
+        <!--  <link href="assets/css/boxed.css" rel="stylesheet"> -->
+        <!--  CHANGE THEME SKIN COLOR HERE (replace blue with any other color from
+          assets/css/skins/ folder) -->
+        <link href="assets/css/skins/blue.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="boxedlayout">
+            <!--  HEADER ================================================== -->
+             <ui:include src="header.xhtml" />
+            <!--  PAGE CONTENT ================================================== -->
+            <div class="singledownloadphp">
+                <!--  TITLE BEGINS -->
+                <div class="headerimage" style="background-image: url(assets/img/header.jpg);">
+                    <div class="headercontent">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="fleft">
+                                        <h1>
+                                            #{ProjectLoader.simpleProyecto.titulo}
+                                        </h1>
+                                    </div>
+                          
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--  TITLE ENDS -->
+                <div class="container padtop50 padbot50">
+                    <div class="row">
+                        <!--  MAIN CONTENT BEGINS -->
+                        <div class="col-md-12">
+                            <div id="primary" class="content-area">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <span class="entryitemname">
+                                            <b>Name: </b> #{ProjectLoader.simpleProyecto.titulo} <br />
+                                        </span> <span class="entryprice"><b>Funding
+                                                Goal:</b> #{ProjectLoader.simpleProyecto.meta}<br /></span> <span
+                                                    class="entrysku"><b>Funding Raised:</b> #{ProjectLoader.totalFinanciado}<br /></span>
+                                        
+                                             
+                                        
+                                        <br /> <img width="100" height="70"
+                                                    src="http://localhost:3256/#{ProjectLoader.simpleProyecto.imagen}"
+                                                    class="attachment-post-thumbnail wp-post-image" alt="5_1" />
+                                        <br/>
+                                        <div  class="c100 p#{ProjectLoader.porcentajeFinanciado} default green">
+                    <span>#{ProjectLoader.porcentajeFinanciado}%</span>
+                    <div class="slice">
+                        <div class="bar"></div>
+                        <div class="fill"></div>
+                    </div>
+                </div>
+                                        
+                                        <br /> 
+                                    </div>
+                                    <p></p>
+                                    <div class="col-md-9">
+                                        <div align="center" class="embed-responsive embed-responsive-16by9">
+                                            <video  class="embed-responsive-item"
+                                                    src="http://localhost:3256/#{ProjectLoader.simpleProyecto.rutaVideo}" >
+                                            </video>
+                                        </div>
+                                        <p></p>
+                                   <!--     <div class="progress">
+                                            <div class="progress-bar progress-bar-success" style="width:#{ProjectLoader.porcentajeFinanciado}%">
+                                                #{ProjectLoader.porcentajeFinanciado}% Complete
+                                            </div>
+                                        </div>   -->
+                                        
+                                       
+                                                      
+                                           
+                                        
+                                        <legend>Descripción</legend>
+                                        <div>
+                                          
+                                                #{ProjectLoader.simpleProyecto.descripcion}
+                                            
+                                          
+                                        </div>
+                                        <div id="comments" class="comments-area">
+                                            <div id="respond" class="comment-respond">
+                                                
+                                              
+                                                    <p class="form-allowed-tags">
+                                                        You may use these <abbr
+                                                            title="HyperText Markup Language">HTML</abbr>
+                                                        tags and attributes: <code>&lt;a href=&quot;&quot;
+                                                            title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt;
+                                                            &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote
+                                                            cite=&quot;&quot;&gt; &lt;cite&gt; &lt;code&gt; &lt;del
+                                                            datetime=&quot;&quot;&gt; &lt;em&gt; &lt;i&gt; &lt;q
+                                                            cite=&quot;&quot;&gt; &lt;strike&gt; &lt;strong&gt;
+                                                        </code>
+                                                    </p>
+                                                    <p class="form-submit">
+                                                        <input name="submit" type="submit" id="submit"
+                                                               class="submit" value="FINANCIAR" />
+                                                    </p>
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--  MAIN CONTENT ENDS -->
+                    </div>
+                </div>
+            </div>
+            <!--  CALL TO ACTION ================================================== -->
+            <div class="actionbeforefooter text-center">
+                <div class="container">
+                    <span><i class="fa fa-star fa-spin"></i> Get a free
+                        whitepaper if you sign up today </span> <a target="_blank"
+                                                               class="actionbutton" href="overview.html#">Sign Up</a>
+                </div>
+            </div>
+            <!--  FOOTER ================================================== -->
+               <ui:include src="footer.xhtml" />
+            <!--  SCRIPTS ================================================== --><script
+            type="text/javascript" src="assets/js/jquery.js" ></script><script
+                type="text/javascript" src="assets/js/bootstrap.min.js"
+            ></script> <script type="text/javascript"
+            src="assets/js/masonry.js" ></script> <script
+            type="text/javascript" src="assets/js/imagesloaded.js" ></script><script
+            type="text/javascript" src="assets/js/SmoothScroll.js" ></script><script
+            type="text/javascript" src="assets/js/init.js" ></script><script
+            type="text/javascript" src="assets/js/anim.js" ></script>
+        </div>
+    </body>
+</html>

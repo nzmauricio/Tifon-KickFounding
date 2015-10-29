@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <body>
+        <div class="col-md-12">
+                            <div class="wraplogin">
+                                <h:form id="edd_login_form" class="edd_form" >
+                                    <fieldset>
+                                        <legend>
+                                            Inicia Sesión
+                                        </legend>
+                                        <p>
+                                            <label>Nombre de Usuario</label>
+                                            <p:inputText id="username" styleClass="required edd-input" value="#{UsuarioBean.currentUser.nombre}" />
+                                        </p>
+                                        <p>
+                                            <label>Password</label> 
+                                            <p:inputText id="password" styleClass="required edd-input password " type="password" value="#{UsuarioBean.currentUser.password}" />
+                                        </p>
+                                        <p>
+                                            <h:commandButton value="Iniciar Sesion" actionListener="#{UsuarioBean.validar()}" type="submit"/>
+                                        </p>
+                                    </fieldset>
+                                </h:form>
+                            </div>
+                            <span class="or1">o</span>
+                            <div class="wrapregister">
+                                <h:form id="edd_register_form" class="edd_form">
+                                    <fieldset>
+                                        <legend>
+                                            Registrar Nueva Cuenta
+                                        </legend>
+                                        <p>
+                                            <label>Nombre de Usuario</label>
+                                            <p:inputText id="username-new" styleClass="required edd-input" value="#{UsuarioBean.currentUser.nombre}" />
+                                        </p>
+                                        <p>
+                                            <label>Password</label> 
+                                            <p:inputText id="password-nes" styleClass="required edd-input password" type="password" value="#{UsuarioBean.currentUser.password}" />
+                                        </p>
+
+                                        <p>
+                                            <label>E-Mail</label>
+                                            <p:inputText id="username" styleClass="required edd-input" value="#{UsuarioBean.currentUser.email}" />
+                                        </p>
+                                        <p>
+                                            <h:commandButton value="Registrar" actionListener="#{UsuarioBean.registrar()}" type="submit"/>
+                                        </p>
+
+                                    </fieldset>
+                                </h:form>
+                            </div>
+                        </div>
+    </body>
+</html>

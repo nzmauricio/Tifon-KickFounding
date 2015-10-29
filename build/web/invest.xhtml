@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html" lang="en-US"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <head>
+        <meta content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+        <link rel="shortcut icon" href="assets/img/favicon.ico" />
+        <title>
+            Tifón Apps - Crowdfunding
+        </title>
+        <link href="http://fonts.googleapis.com/css?family=Raleway:400,300,500,600,700,800,900" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="edd_templates/edd.css" type="text/css" media="all" />
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css" media="all" />
+        <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+        <link rel="stylesheet" href="assets/css/font-awesome.css" type="text/css" media="all" />
+        <!--  UNCOMMENT THE FOLLOWING LINE TO ACTIVATE THE BOXED LAYOUT (see the
+          documentation for more) -->
+        <!--  <link href="assets/css/boxed.css" rel="stylesheet"> -->
+        <!--  CHANGE THEME SKIN COLOR HERE (replace blue with any other color from
+          assets/css/skins/ folder) -->
+        <link href="assets/css/skins/blue.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="boxedlayout">
+            <!--  HEADER ================================================== -->
+           <ui:include src="header.xhtml" />
+            <!--  PAGE CONTENT ================================================== -->
+            <div class="shoppage">
+                <!--  TITLE BEGINS -->
+                <div class="headerimage" style="background-image: url(assets/img/header.jpg);">
+                    <div class="headercontent">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="fleft">
+                                        <h1>
+                                            Proyectos
+                                        </h1>
+                                    </div>
+                                    <div class="fright breadc">
+                                        <a href="index.html">Home</a> / Proyectos
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--  TITLE ENDS -->    
+                <div class="container padbot30">
+                    
+                    <div class="row padtop30 padbot20">
+                        
+                        <div class="col-md-12">
+                                       
+                            <div class="sortitemsarea fright">
+                                <form method="get" action="invest.html#" class="wowsortitems">
+                                    <select name="data" id="data" onchange="this.form.submit()">bb
+                                        <option value="1">
+                                            Sort by newest
+                                        </option>
+                                        <option value="2">
+                                            Sort by valuation: low to high
+                                        </option>
+                                        <option value="3">
+                                            Sort by valuation: high to low
+                                        </option>
+                                        <option value="4">
+                                            Sort by popularity
+                                        </option>
+                                        <option value="5">
+                                            Sort by oldest
+                                        </option>
+                                        <option value="6">
+                                            Sort by comments
+                                        </option>
+                                        <option value="7">
+                                            Sort alphabetically
+                                        </option></select>
+                                    <noscript>
+                                        <input type="submit" value="Submit" />
+                                    </noscript>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!--  MAIN CONTENT BEGINS -->
+                        <div class="col-md-9">
+                            <div class="wowitemboxlist">
+                                
+                                
+                                <ui:repeat var="o" value="#{ProjectLoader.listaProyectos}" varStatus="status">   
+                                <div class="wowitembox">
+                                    <div class="wowitemboxinner">
+                                        <div class="imagearea">
+                                            <img src="http://localhost:3256/#{o.imagen}"></img>
+                                            <div class="caption">
+                                                <div class="blur">
+                                                </div>
+                                                <div class="caption-text">
+                                                    <div class="captionbuttons">
+                                                     <!--   <a href="overview.html" class="captiondetails"> -->
+                                                            <h:link outcome="overview.xhtml" value="View Details" styleClass="captiondetails">
+                                                                <f:param name="idProject" value="#{o.id}" />
+                                                                 <i class="fa fa-link"></i>
+                                                            </h:link>
+                                                           
+                                                            
+                                                       <!-- </a> -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="notesarea">
+                                            <a href="overview.html" title="Travel Fashion"> </a>
+                                            <h2>
+                                                #{o.titulo}
+                                            </h2>
+                                            <div class="description">
+                                                <p>
+                                                    #{o.descripcion}
+                                                </p>
+                                            </div>
+                                            <div class="notesbottom">
+                                                <div class="price fleft">
+                                                    $#{o.meta}
+                                                </div>
+                                                <div class="cart fright">
+                                                    <a href="invest.html#" class="edd-add-to-cart">
+                                                        <span class="edd-add-to-cart-label">Read More</span>
+                                                    </a>
+                                                </div>
+                                                <div class="clearfix">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--  .wowitemboxinner -->
+                                </div>
+                                </ui:repeat>
+                        
+                            </div>
+                            <div class="clear">
+                            </div>
+                            <div class="pagination">
+                                <span class="current">1</span><a href="invest.html#"
+                                                                 class="inactive">2</a>
+                            </div>
+                            <div class="clear">
+                            </div>
+                        </div>
+                        <!--  MAIN CONTENT ENDS -->
+                        <!--  SIDEBAR BEGINS -->
+                        <div class="col-md-3">
+                            <div id="secondary" class="widget-area">
+                                <aside id="edd_categories_tags_widget-3" class="widget widget_edd_categories_tags_widget">
+                                    <h1 class="widget-title section-title">
+                                        <span>Categories</span>
+                                    </h1>
+                                    <ul class="edd-taxonomy-widget">
+                                        <ui:repeat var="o" value="#{CategoriaBean.listaCategoria}" varStatus="status">   
+                                            <li class="cat-item">
+                                                <a href="invest.html#">#{o.nombre}</a>
+                                            </li>
+                                        </ui:repeat>
+                                     
+                                    </ul>
+                                </aside>
+                            </div>
+                        </div>
+                        <!--  SIDEBAR ENDS -->
+                    </div>
+                </div>
+            </div>
+            <!--  FOOTER ================================================== -->
+            <ui:include src="footer.xhtml" />
+            <!--  SCRIPTS ================================================== --><script
+            type="text/javascript" src="assets/js/jquery.js"></script><script
+                type="text/javascript" src="assets/js/bootstrap.min.js"
+            ></script> <script type="text/javascript"
+            src="assets/js/masonry.js"></script> <script
+            type="text/javascript" src="assets/js/imagesloaded.js" ></script><script
+            type="text/javascript" src="assets/js/SmoothScroll.js" ></script><script
+            type="text/javascript" src="assets/js/init.js" ></script><script
+            type="text/javascript" src="assets/js/anim.js" ></script>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+        <h:outputStylesheet library="css" name="newcss.css"  />
+    </h:head>
+    <h:body>
+              VIDEO
+                                <video src=''  >
+        </video>
+           <!-->  
+              <h:form id="form" enctype="multipart/form-data">
+                  <h:inputFile id="file" value=""/>
+  <h:commandButton value="Upload"
+                   action=""/>
+</h:form>
+<!-->
+
+                        <h:commandButton value="Upload"
+                                         action="#{ProyectoBean.uploadImage()}"/>
+
+
+
+   <h:form id="new_project_form" class="edd_form">
+                  
+                    <legend>
+                      Log into Your Account
+                    </legend>
+                    <p>
+                      <label>Titulo</label>
+                        <h:inputText id="titulo" styleClass="required edd-input" value="#{ProyectoBean.test}" />
+                    </p>
+
+                     <p>
+                      <label>Imagen</label>
+                        <h:inputText id="imagen" styleClass="required edd-input" value="#{ProyectoBean.proyectoNuevo.imagen}" />
+                    </p>
+
+                    
+                     <p>
+                      <label>Descripcion</label>
+                        <h:inputText  id="descripcion" styleClass="required edd-input" value="#{ProyectoBean.proyectoNuevo.descripcion}" />
+                    </p>
+
+                      <p>
+                      <label>Plazo</label>
+                      <h:inputText id="plazo" styleClass="required edd-input" value="#{ProyectoBean.proyectoNuevo.plazoFinanciamiento}" />
+                    </p>
+
+                      <p>
+                      <label>Meta</label>
+                      <h:inputText id="meta" styleClass="required edd-input" value="#{ProyectoBean.proyectoNuevo.meta}" />
+                    </p>
+
+                      <p>
+                      <label>Video</label>
+                      <h:inputText id="video"  styleClass="required edd-input" value="#{ProyectoBean.proyectoNuevo.rutaVideo}" />
+                    </p>
+                    
+
+
+                    <p>
+                        <h:outputText value="#{ProyectoBean.test}"></h:outputText>
+
+                        <h:commandButton value="Submit" actionListener="#{ProyectoBean.save()}" type="submit"/>
+
+
+    
+                    </p>
+                 
+                </h:form>
+           
+    </h:body>
+</html>
+

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE html
+   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+            xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+  <h:head>
+    <meta content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <link rel="shortcut icon" href="assets/img/favicon.ico" />
+    <title>
+      San Diego - Bootstrap Crowdfunding HTML Template
+    </title>    
+
+             
+    <link href="http://fonts.googleapis.com/css?family=Raleway:400,300,500,600,700,800,900" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="edd_templates/edd.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="assets/css/font-awesome.css" type="text/css" media="all" />
+    <!--  UNCOMMENT THE FOLLOWING LINE TO ACTIVATE THE BOXED LAYOUT (see the
+      documentation for more) -->
+    <!--  <link href="assets/css/boxed.css" rel="stylesheet"> -->
+    <!--  CHANGE THEME SKIN COLOR HERE (replace blue with any other color from
+      assets/css/skins/ folder) -->
+    <link href="assets/css/skins/blue.css" rel="stylesheet" />
+  </h:head>
+  <h:body>
+    <div class="boxedlayout">
+      <!--  HEADER ================================================== -->
+    <ui:include src="header.xhtml" />
+      <!--  PAGE CONTENT ================================================== -->
+      <div class="templatemyaccount">
+        <!--  TITLE BEGINS -->
+        <div class="headerimage" style="background-image: url(http://www.themepush.com/demo-kailo/wp-content/uploads/sites/6/2015/03/header.jpg);">
+          <div class="headercontent">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="fleft">
+                    <h1>
+                      Mi Cuenta
+                    </h1>
+                  </div>
+                  <div class="fright breadc">
+                    <a href="index.html">Inicio</a> / Mi Cuenta
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--  TITLE ENDS -->
+        <div class="container padtop40 padbot50">
+          <div class="row">
+            <!--  MAIN CONTENT BEGINS -->
+            <div class="col-md-12">
+              <div class="form-group">
+                <h:form id="new_project_form" class="edd_form" enctype="multipart/form-data">
+                  <fieldset>
+                    <legend>
+                      Registra tu Proyecto
+                    </legend>
+                    <p>
+                      <label>Titulo</label>
+                      <p:inputText id="titulo" styleClass="required edd-input" value="#{ProyectoBean.proyectoNuevo.titulo}" />
+                    </p>
+
+                     <p>
+                      <label>Imagen</label>
+                                              <h:inputFile id="Imagefile" value="#{ProyectoBean.imageArchivo}"/>
+                        <h:commandButton value="Upload"
+                                         action="#{ProyectoBean.uploadImage()}"/>
+                    </p>
+
+                    
+                     <p>
+                      <label>Descripcion</label>
+                        <p:inputText  id="descripcion" styleClass="required edd-input" value="#{ProyectoBean.proyectoNuevo.descripcion}" />
+                    </p>
+
+                      <p>
+                      <label>Plazo</label>
+                      <p:inputText id="plazo" styleClass="required edd-input" value="#{ProyectoBean.fechaTemporal}" >
+                           <f:convertDateTime pattern="dd/MM/yyyy"/> 
+                      </p:inputText>
+                      
+                    </p>
+
+                      <p>
+                      <label>Meta</label>
+                      <p:inputText id="meta" styleClass="required edd-input" value="#{ProyectoBean.proyectoNuevo.meta}" />
+                    </p>
+
+                      <p>
+                      <label>Video</label>
+                      
+                      <h:inputFile id="Videofile" value="#{ProyectoBean.videoArchivo}"/>
+                        <h:commandButton value="Upload"
+                                         action="#{ProyectoBean.uploadVideo()}"/>
+                    </p>
+                    
+
+
+                    <p>
+
+                     <h:commandButton value="Submit" actionListener="#{ProyectoBean.save()}" type="submit"/>
+
+
+    
+                    </p>
+                  </fieldset>
+                </h:form>
+
+              </div>
+             
+             
+            </div>
+            <!--  MAIN CONTENT ENDS -->
+          </div>
+        </div>
+      </div>
+      <!--  CALL TO ACTION ================================================== -->
+      <ui:include src="footer.xhtml" />
+      
+      <!-- SCRIPTS ================================================== --> <script
+      type="text/javascript" src="assets/js/jquery.js" ></script><script
+      type="text/javascript" src="assets/js/bootstrap.min.js"
+      ></script> <script type="text/javascript"
+      src="assets/js/masonry.js" ></script> <script
+      type="text/javascript" src="assets/js/imagesloaded.js" ></script><script
+      type="text/javascript" src="assets/js/SmoothScroll.js" ></script><script
+      type="text/javascript" src="assets/js/init.js" ></script><script
+      type="text/javascript" src="assets/js/anim.js" ></script> 
+    </div>
+  </h:body>
+</html>
